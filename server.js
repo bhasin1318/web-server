@@ -1,7 +1,7 @@
 var express = require('express')
 
 var app = express()
-var portToUse = 3000
+var portToUse = process.env.PORT || 3000
 var middleware = require('./middleware.js')
 
 
