@@ -13,7 +13,7 @@ app.get('/about', middleware.requireAuthentication, function (req, res) {
 	res.send('We are cool');
 });
 
-app.use(express.static(__dirname + '/Public'));
+app.use(express.static(__dirname + '/public'));
 
 app.listen(PORT, function () {
 	console.log('express server started at port ' +  PORT);
