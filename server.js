@@ -14,7 +14,7 @@ app.get('/about', middleware.requireAuthentication, function (req, res) {
 app.use(express.static(__dirname + '/public'));
 
 open('http://localhost:3000',function(err){
-	if (err) throw err;
+	console.log("Success!")
 });
 
 app.listen(PORT, function () {
