@@ -2,15 +2,14 @@ var express = require('express');
 var app = express();
 var PORT = process.env.PORT || 3000;
 var open = require('open');
-
+var path = require('path')
 var middleware = require('./middleware.js');
 
 app.use(middleware.logger);
 
-// app.get('/', function (req, res) {
-// 	res.send('Hello!');
-// });
-app.use(express.static('public'));
+app.get('/', function (req, res) {
+	res.sendFile(path.join(__dirname + '/public/index.html'));
+});
 
 app.get('/about', middleware.requireAuthentication, function (req, res) {
 	res.send('About Us!');
