@@ -7,13 +7,17 @@ var middleware = require('./middleware.js');
 
 app.use(middleware.logger);
 
+// app.get('/', function (req, res) {
+// 	res.send('Hello!');
+// });
+app.use(express.static('public'));
+
 app.get('/about', middleware.requireAuthentication, function (req, res) {
 	res.send('About Us!');
 });
 
-app.use(express.static(__dirname + '/public'));
-
-open('http://localhost:3000',function(err){
+let url = 'http://localhost:' + PORT;
+open(url,function(err){
 	console.log("Success!")
 });
 
