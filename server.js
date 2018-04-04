@@ -8,7 +8,7 @@ app.use(middleware.logger);
 
 app.use(express.static('public'));
 
-app.get('/about', middleware.requireAuthentication, function (req, res) {
+app.get('/', middleware.requireAuthentication, function (req, res) {
 	res.send('About Us!');
 });
 
