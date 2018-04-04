@@ -9,7 +9,7 @@ app.use(middleware.logger);
 
 app.get('/', function (req, res) {
 	console.log(path.join(__dirname + '/public/index.html'))
-	res.sendFile(path.join(__dirname + 'public/index.html'));
+	res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.get('/about', middleware.requireAuthentication, function (req, res) {
