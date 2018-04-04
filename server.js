@@ -8,10 +8,12 @@ app.use(middleware.logger);
 
 app.use(express.static('public'));
 
-app.get('/', middleware.requireAuthentication, function (req, res) {
+app.get('/', function (req, res) {
+	res.send('We r node!');
+});
+app.get('/about', middleware.requireAuthentication, function (req, res) {
 	res.send('About Us!');
 });
-
 
 app.listen(PORT, function () {
 	console.log('Express server started on port ' + PORT + '!');
