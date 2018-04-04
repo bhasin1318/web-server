@@ -8,7 +8,7 @@ var middleware = require('./middleware.js');
 app.use(middleware.logger);
 
 app.get('/', function (req, res) {
-	console.log(path.join(__dirname + '/public/index.html'))
+	console.log(__dirname)
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
