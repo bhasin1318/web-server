@@ -6,10 +6,11 @@ var path = require('path')
 var middleware = require('./middleware.js');
 
 app.use(middleware.logger);
+app.use(express.static(__dirname + '/assets'))
 
 app.get('/', function (req, res) {
 	console.log(__dirname)
-	res.sendFile(path.join(__dirname + '/public/index.html'));
+	res.sendFile(path.join(__dirname + '/assets/index.html'));
 });
 
 app.get('/about', middleware.requireAuthentication, function (req, res) {
